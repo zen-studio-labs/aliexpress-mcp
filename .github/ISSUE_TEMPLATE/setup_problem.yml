@@ -1,0 +1,29 @@
+name: Setup problem
+description: The server does not connect, sign in or show its tools in your client.
+labels: [setup]
+body:
+  - type: input
+    id: client
+    attributes:
+      label: Client and version
+      placeholder: Claude Code 2.1, Cursor 1.8, claude.ai, ChatGPT ...
+    validations:
+      required: true
+  - type: dropdown
+    id: method
+    attributes:
+      label: How did you add the server?
+      options:
+        - Claude Code plugin
+        - Install button
+        - Config file or command
+        - Token header
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened
+      description: The message or screen you see. Remove tokens and personal data before posting.
+    validations:
+      required: true

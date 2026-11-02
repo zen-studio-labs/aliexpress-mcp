@@ -1,0 +1,34 @@
+{
+  "name": "aliexpress-mcp",
+  "owner": {
+    "name": "Zen Studio",
+    "url": "https://github.com/zen-studio-labs"
+  },
+  "metadata": {
+    "description": "AliExpress (速卖通) product research tools and skill for Claude Code."
+  },
+  "plugins": [
+    {
+      "name": "aliexpress",
+      "source": "./",
+      "description": "Search AliExpress (Ali Express, 速卖通) products by keyword, link or store: prices, exact orders, ratings, variants, shipping for your market and buyer reviews.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Zen Studio"
+      },
+      "homepage": "https://github.com/zen-studio-labs/aliexpress-mcp",
+      "license": "MIT",
+      "keywords": [
+        "aliexpress",
+        "ali express",
+        "速卖通",
+        "dropshipping",
+        "product research",
+        "ecommerce",
+        "price monitoring",
+        "mcp"
+      ],
+      "category": "data"
+    }
+  ]
+}

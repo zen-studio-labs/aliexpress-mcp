@@ -1,0 +1,23 @@
+{
+  "name": "aliexpress",
+  "version": "0.1.0",
+  "description": "Search AliExpress (Ali Express, 速卖通) products by keyword, link or store: prices, exact orders, ratings, variants, shipping for your market and buyer reviews.",
+  "author": {
+    "name": "Zen Studio",
+    "url": "https://github.com/zen-studio-labs"
+  },
+  "homepage": "https://github.com/zen-studio-labs/aliexpress-mcp",
+  "repository": "https://github.com/zen-studio-labs/aliexpress-mcp",
+  "license": "MIT",
+  "keywords": [
+    "aliexpress",
+    "ali express",
+    "速卖通",
+    "dropshipping",
+    "product research",
+    "ecommerce",
+    "price monitoring",
+    "mcp"
+  ],
+  "privacyPolicyUrl": "https://docs.apify.com/legal/privacy-policy"
+}

@@ -1,0 +1,7 @@
+{
+  "mcpServers": {
+    "aliexpress": {
+      "url": "https://mcp.apify.com/?tools=fetch-actor-details,get-actor-run,get-dataset-items,zen-studio/aliexpress-scraper"
+    }
+  }
+}

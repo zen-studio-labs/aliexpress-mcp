@@ -1,0 +1,20 @@
+# AliExpress MCP Server
+
+> Hosted remote MCP server for AliExpress (Ali Express, 速卖通) product data: search by keyword, product links or whole stores, with prices, exact order counts, ratings, every variant's price and stock, seller details, shipping options for 63 delivery markets, and optional buyer reviews. Read-only. No AliExpress account and no app keys; users sign in with a free Apify account (OAuth) and pay per result.
+
+## Install
+
+- Server name: aliexpress
+- Transport: streamable HTTP
+- URL: https://mcp.apify.com/?tools=fetch-actor-details,get-actor-run,get-dataset-items,zen-studio/aliexpress-scraper
+- Auth: Apify OAuth in the user's browser; alternative header `Authorization: Bearer <APIFY_TOKEN>`
+- Claude Code plugin: `claude plugin marketplace add zen-studio-labs/aliexpress-mcp`, then `claude plugin install aliexpress@aliexpress-mcp`
+
+## Docs
+
+- [README](https://github.com/zen-studio-labs/aliexpress-mcp/blob/main/README.md): setup for every client, tools, pricing, FAQ
+- [Skill](https://github.com/zen-studio-labs/aliexpress-mcp/blob/main/skills/aliexpress/SKILL.md): run flow, input recipes, market settings, field sets
+
+## Tools
+
+- zen-studio/aliexpress-scraper: products for keywords, product links or store links, with details, shipping and optional buyer reviews

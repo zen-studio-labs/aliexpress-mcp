@@ -1,0 +1,54 @@
+name: Publish to MCP Registry
+
+# Runs only when a GitHub release is published. Pushes never publish.
+on:
+  release:
+    types: [published]
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write # GitHub OIDC login to the registry
+      contents: read
+    env:
+      MCP_PUBLISHER_VERSION: v1.8.6
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Check repository consistency
+        run: |
+          pip install --quiet jsonschema
+          python3 scripts/check_repo.py
+
+      - name: Set version from release tag
+        run: |
+          VERSION="${GITHUB_REF_NAME#v}"
+          jq --arg v "$VERSION" '.version = $v' server.json > server.tmp && mv server.tmp server.json
+
+      - name: Install cosign
+        uses: sigstore/cosign-installer@6f9f17788090df1f26f669e9d70d6ae9567deba6 # v4.1.2
+
+      - name: Download and verify mcp-publisher
+        run: |
+          set -euo pipefail
+          archive="mcp-publisher_linux_amd64.tar.gz"
+          base_url="https://github.com/modelcontextprotocol/registry/releases/download/${MCP_PUBLISHER_VERSION}"
+          curl --fail --location --silent --show-error --output "$archive" "$base_url/$archive"
+          curl --fail --location --silent --show-error --output "$archive.sigstore.json" "$base_url/$archive.sigstore.json"
+          cosign verify-blob \
+            --bundle "$archive.sigstore.json" \
+            --certificate-identity "https://github.com/modelcontextprotocol/registry/.github/workflows/release.yml@refs/tags/${MCP_PUBLISHER_VERSION}" \
+            --certificate-oidc-issuer "https://token.actions.githubusercontent.com" \
+            "$archive"
+          tar xzf "$archive" mcp-publisher
+          rm -f "$archive" "$archive.sigstore.json"
+
+      - name: Validate server.json
+        run: ./mcp-publisher validate
+
+      - name: Log in with GitHub OIDC
+        run: ./mcp-publisher login github-oidc
+
+      - name: Publish
+        run: ./mcp-publisher publish

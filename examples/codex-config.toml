@@ -1,0 +1,6 @@
+# ~/.codex/config.toml
+# Sign in afterwards with: codex mcp login aliexpress
+[mcp_servers.aliexpress]
+url = "https://mcp.apify.com/?tools=fetch-actor-details,get-actor-run,get-dataset-items,zen-studio/aliexpress-scraper"
+# Token instead of sign-in: export APIFY_TOKEN and uncomment the next line.
+# bearer_token_env_var = "APIFY_TOKEN"

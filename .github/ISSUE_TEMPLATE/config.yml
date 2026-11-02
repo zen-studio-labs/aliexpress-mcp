@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Data question about a specific tool
+    url: https://apify.com/zen-studio/aliexpress-scraper/issues
+    about: Questions about results, fields or billing of a tool are answered fastest on its Apify Store page.
