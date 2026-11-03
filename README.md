@@ -440,7 +440,14 @@ Requests go to Apify's hosted MCP server and run on your Apify account. Apify's 
 
 ## More from Zen Studio
 
-AliExpress MCP is built on [Zen Studio's Apify Actors](https://apify.com/zen-studio). You can also run the tool directly on Apify, from its API, or on a schedule. For Xianyu (闲鱼) second-hand listings, see [Goofish MCP](https://github.com/zen-studio-labs/goofish-mcp). For Xiaohongshu (小红书) notes, comments and creators, see [RedNote MCP](https://github.com/zen-studio-labs/rednote-xiaohongshu-mcp).
+AliExpress MCP is built on [Zen Studio's Apify Actors](https://apify.com/zen-studio). You can also run the tool directly on Apify, from its API, or on a schedule.
+
+- [Goofish MCP](https://github.com/zen-studio-labs/goofish-mcp): Xianyu (闲鱼) second-hand listings, prices and sellers.
+- [RedNote MCP](https://github.com/zen-studio-labs/rednote-xiaohongshu-mcp): Xiaohongshu (小红书) notes, comments and creators.
+- [Douyin MCP](https://github.com/zen-studio-labs/douyin-mcp): Douyin (抖音) videos, creators, comments and shop products.
+- [Taobao & Tmall MCP](https://github.com/zen-studio-labs/taobao-tmall-mcp): Taobao and Tmall (淘宝, 天猫) products, prices, SKUs and shops.
+- [1688 & Alibaba.com MCP](https://github.com/zen-studio-labs/alibaba-1688-mcp): 1688 wholesale and Alibaba.com products, plus supplier reviews.
+- [G2 & Capterra Reviews MCP](https://github.com/zen-studio-labs/g2-capterra-reviews-mcp): software reviews from G2, Capterra, TrustRadius and Gartner Peer Insights.
 
 ## License
 
